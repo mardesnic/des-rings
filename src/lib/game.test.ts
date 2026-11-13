@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
 import {
-  FEWEST_SCATTERED,
   LEVELS,
   RINGS,
   canMove,
@@ -122,24 +121,12 @@ describe('new games', () => {
       }
   });
 
-  it('start as one tower on Easy and Medium', () => {
-    for (const level of ['easy', 'medium'] as const)
+  it('start as one tower', () => {
+    for (const level of LEVELS)
       for (let i = 0; i < 100; i++) {
         const r = newRound(level);
         expect(movesLeft(r.pegs, r.goal)).toBe(2 ** RINGS[level] - 1);
       }
-  });
-
-  it('on Hard, are sometimes scattered, but never easier than Medium', () => {
-    let scattered = 0;
-    for (let i = 0; i < 400; i++) {
-      const r = newRound('hard');
-      expect(movesLeft(r.pegs, r.goal)).toBeGreaterThanOrEqual(
-        FEWEST_SCATTERED
-      );
-      if (!r.pegs.some((p) => p.length === 4)) scattered++;
-    }
-    expect(scattered).toBeGreaterThan(100);
   });
 
   it('are not the same game twice in a row', () => {

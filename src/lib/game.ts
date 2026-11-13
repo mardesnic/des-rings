@@ -86,31 +86,17 @@ export function movesLeft(pegs: Pegs, goal: number) {
   return moves;
 }
 
-// A scattered start on Hard always needs at least this many moves, more
-// than the whole Medium tower (7), so it is never the easier game.
-export const FEWEST_SCATTERED = 8;
-
 const tower = (rings: number) =>
   Array.from({ length: rings }, (_, i) => rings - i);
 
 const pick = (n: number, random: () => number) => Math.floor(random() * n);
 
+// All the rings on one peg, and the star on another.
 function make(level: Level, random: () => number) {
-  const rings = RINGS[level];
   const goal = pick(PEGS, random);
-  // On Hard, every other game starts with the rings scattered.
-  if (level === 'hard' && random() < 0.5) {
-    for (;;) {
-      const pegs: Pegs = [[], [], []];
-      for (let ring = rings; ring >= 1; ring--)
-        pegs[pick(PEGS, random)].push(ring);
-      if (movesLeft(pegs, goal) >= FEWEST_SCATTERED) return { pegs, goal };
-    }
-  }
-  // Otherwise all on one peg, and the star on another.
   const from = (goal + 1 + pick(PEGS - 1, random)) % PEGS;
   const pegs: Pegs = [[], [], []];
-  pegs[from] = tower(rings);
+  pegs[from] = tower(RINGS[level]);
   return { pegs, goal };
 }
 

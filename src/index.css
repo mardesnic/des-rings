@@ -291,17 +291,6 @@ h2 {
   }
 }
 
-/* A little hop of the finished tower. */
-.board--solved .peg:has(.peg__star) svg {
-  animation: hop 0.5s 0.15s ease-out;
-}
-
-@keyframes hop {
-  40% {
-    transform: translateY(-10px);
-  }
-}
-
 /* Under the board */
 
 .bar {
@@ -369,8 +358,7 @@ h2 {
     transition: none;
   }
   .shake0,
-  .shake1,
-  .board--solved svg {
+  .shake1 {
     animation: none !important;
   }
   .solved {

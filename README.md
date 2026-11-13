@@ -15,7 +15,7 @@ On your phone, open it and choose **Add to Home Screen** (Safari) or **Install a
 - Three levels:
   - **Easy**: 2 rings, 3 moves, to learn the rule
   - **Medium**: 3 rings, the classic 7-move puzzle
-  - **Hard**: 4 rings; every other game starts with the rings scattered, and it always takes at least 8 moves
+  - **Hard**: 4 rings, 15 moves
 - Tap a peg to lift its top ring, then tap another peg to put it there
 - Each ring size has its own colour
 - A count of puzzles solved at each level
