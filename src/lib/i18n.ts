@@ -25,10 +25,6 @@ const en = {
     medium: 'Medium',
     hard: 'Hard',
   } as Record<Level, string>,
-  levelNotes: { easy: '2 rings', medium: '3 rings', hard: '4 rings' } as Record<
-    Level,
-    string
-  >,
   peg: 'Peg',
   goalPeg: 'Peg with the star',
   undo: 'Undo',
@@ -60,7 +56,6 @@ const hr: Strings = {
     medium: 'Srednje',
     hard: 'Teško',
   },
-  levelNotes: { easy: '2 prstena', medium: '3 prstena', hard: '4 prstena' },
   peg: 'Štap',
   goalPeg: 'Štap sa zvjezdicom',
   undo: 'Poništi',

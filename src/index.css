@@ -387,15 +387,6 @@ h2 {
   transition: transform 0.1s;
 }
 
-/* What the level means here: the size of the board, or the length of
-   the word. */
-.level__note {
-  margin-top: -8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--muted);
-}
-
 .level:active {
   transform: scale(0.97);
 }
